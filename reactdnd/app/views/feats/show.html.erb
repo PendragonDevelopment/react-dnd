@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @feat.name %>
+</p>
+
+<p>
+  <strong>Effect:</strong>
+  <%= @feat.effect %>
+</p>
+
+<%= link_to 'Edit', edit_feat_path(@feat) %> |
+<%= link_to 'Back', feats_path %>

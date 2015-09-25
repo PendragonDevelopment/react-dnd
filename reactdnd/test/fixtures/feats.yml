@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: feats
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  effect     :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  effect: MyText
+
+two:
+  name: MyString
+  effect: MyText
