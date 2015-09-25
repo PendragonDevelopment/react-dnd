@@ -18,4 +18,7 @@ class Character < ActiveRecord::Base
 
   enum race:      [:human, :dwarf, :elf, :orc]
   enum charclass: [:archer, :cleric, :warrior, :mage, :thief]
+  enum gender:    [:other, :female, :male]
+  enum alignment: [:lawfulgood, :neutralgood, :chaoticgood, :lawfulneutral, :trueneutral, :chaoticneutral, :lawfulevil, :neutralevil, :chaoticevil]
+
 end
