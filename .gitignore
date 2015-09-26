@@ -2,3 +2,4 @@
 cookbooks
 tmp
 Cheffile.lock
+.DS_Store
