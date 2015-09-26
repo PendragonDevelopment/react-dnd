@@ -1,9 +1,7 @@
-var keyMirror = require('react/lib/keyMirror');
-
-module.exports = keyMirror({
-  NEXT_PAGE: null,
-  PREV_PAGE: null,
-  SAVE_FORM: null,
-  SUBMIT_FORM: null,
-  UPLOAD_IMAGE: null
-});
+var CharacterSheetConstants = {
+  NEXT_PAGE: "NEXT_PAGE",
+  PREV_PAGE: "PREV_PAGE",
+  SAVE_FORM: "SAVE_FORM",
+  SUBMIT_FORM: "SUBMIT_FORM",
+  UPLOAD_IMAGE: "UPLOAD_IMAGE"
+};
