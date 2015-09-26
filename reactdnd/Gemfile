@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
+
+# Dotenv comes first in case a gem needs ENV variables
+#   
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -19,7 +23,9 @@ gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
 group :development do
+  gem 'annotate'
   gem 'better_errors'
   gem 'foreman'
   gem 'rails_layout'
