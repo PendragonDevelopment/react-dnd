@@ -24,7 +24,7 @@ var BasicFields = React.createClass({
   },
 
   handleChange: function(event) {
-    this.setState({value: event.target.value});
+    this.setState({name: event.target.value});
   }
 
 });

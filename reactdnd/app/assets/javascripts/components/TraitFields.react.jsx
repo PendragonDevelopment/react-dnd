@@ -1,10 +1,16 @@
 var TraitFields = React.createClass({
+  getInitialState: function() {
+  return {
+          traits: this.props.character.traits,
+          step: 2
+         }
+  },
   render: function() {
     return (
       <div className="trait-fields">
         <div className="form-group">
           <label>Traits</label>
-          <textarea value={this.props.character.traits} className="form-control" />
+          <textarea value={this.state.traits} className="form-control" onChange={this.handleChange} />
         </div>
         <button className="btn btn-default" onClick={this.previousStep}>Previous Step</button>
         <button className="btn btn-default" onClick={this.nextStep}>Next Step</button>
@@ -13,13 +19,15 @@ var TraitFields = React.createClass({
   },
 
   previousStep: function() {
-    var step = 2;
-    CharacterSheetActions.previousPage(step);
+    CharacterSheetActions.previousPage(this.state.step);
   },
 
   nextStep: function() {
-    var step = 2;
-    CharacterSheetActions.nextPage(step);
+    CharacterSheetActions.nextPage(this.state.step);
+  },
+
+  handleChange: function(event) {
+    this.setState({traits: event.target.value});
   }
 
 });
