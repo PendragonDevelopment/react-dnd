@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.2.3'
 
 # Dotenv comes first in case a gem needs ENV variables
-#   
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'
