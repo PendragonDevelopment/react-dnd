@@ -16,6 +16,9 @@
 
 class Character < ActiveRecord::Base
 
+  has_many :feats
+  has_many :images, as: :imageable
+
   enum race:      [:human, :dwarf, :elf, :orc]
   enum charclass: [:archer, :cleric, :warrior, :mage, :thief]
   enum gender:    [:other, :female, :male]
