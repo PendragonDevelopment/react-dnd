@@ -1,6 +1,11 @@
 
 var _step = 1;
-var _character = {};
+var _character = {
+  name: "Jeff",
+  gender: "Male",
+  profession: "Warrior",
+  race: "Orc",
+};
 
 function setNextStep(step) {
   _step += 1;
