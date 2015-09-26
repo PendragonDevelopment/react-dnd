@@ -14,10 +14,10 @@ var CharacterSheetActions = {
     })
   },
 
-  saveForm: function(character) {
+  saveForm: function(data) {
     AppDispatcher.handleAction({
       actionType: CharacterSheetConstants.SAVE_FORM,
-      data: character
+      data: data
     })
   },
 

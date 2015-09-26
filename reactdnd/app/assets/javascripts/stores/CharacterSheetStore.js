@@ -1,5 +1,6 @@
 
 var _step = 1;
+var _character = {};
 
 function setNextStep(step) {
   _step += 1;
@@ -9,10 +10,18 @@ function setPreviousStep(step) {
   _step -= 1;
 };
 
+function setChar(newData) {
+  _character = _.extend({}, _character, newData);
+};
+
 var CharacterSheetStore = _.extend({}, EventEmitter.prototype, {
 
   getStep: function() {
     return _step;
+  },
+
+  getChar: function() {
+    return _character;
   },
 
   emitChange: function() {
@@ -40,6 +49,7 @@ AppDispatcher.register(function (payload) {
       setPreviousStep(action.step);
       break;
     case 'SAVE_FORM':
+      setChar(action.data);
       break;
     case 'SUBMIT_FORM':
       break;

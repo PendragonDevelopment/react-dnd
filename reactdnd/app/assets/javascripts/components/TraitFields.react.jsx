@@ -13,7 +13,7 @@ var TraitFields = React.createClass({
           <textarea value={this.state.traits} className="form-control" onChange={this.handleChange} />
         </div>
         <button className="btn btn-default" onClick={this.previousStep}>Previous Step</button>
-        <button className="btn btn-default" onClick={this.nextStep}>Next Step</button>
+        <button className="btn btn-default" onClick={this.nextStep}>Save &amp; Continue</button>
       </div>
     )
   },
@@ -23,6 +23,11 @@ var TraitFields = React.createClass({
   },
 
   nextStep: function() {
+    var data = {
+      traits: this.state.traits
+    };
+
+    CharacterSheetActions.saveForm(data);
     CharacterSheetActions.nextPage(this.state.step);
   },
 

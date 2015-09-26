@@ -1,6 +1,7 @@
 function getCharacterState() {
   return {
     step: CharacterSheetStore.getStep(),
+    character: CharacterSheetStore.getChar(),
   }
 }
 
@@ -22,20 +23,20 @@ var CharacterSheet = React.createClass({
     switch (this.state.step) {
       case 1:
         // references to props here should be changed to state
-        return <BasicFields   character={this.props.character}
+        return <BasicFields   character={this.state.character}
                               nextStep={this.nextStep}
                               previousStep={this.previousStep}
                               saveValues={this.saveValues} />
       case 2:
-        return <TraitFields  character={this.props.character}
+        return <TraitFields  character={this.state.character}
                              nextStep={this.nextStep}
                              previousStep={this.previousStep} />
       case 3:
-        return <FeatFields   character={this.props.character}
+        return <FeatFields   character={this.state.character}
                              nextStep={this.nextStep}
                              previousStep={this.previousStep} />
       case 4:
-        return <Summary character={this.props.character}
+        return <Summary character={this.state.character}
                         previousStep={this.previousStep} />
     }
   },

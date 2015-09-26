@@ -14,12 +14,18 @@ var BasicFields = React.createClass({
           <input type="text" value={this.state.name} className="form-control" onChange={this.handleChange} />
         </div>
 
-        <button className="btn btn-default" onClick={this.nextStep}>Next Step</button>
+        <button className="btn btn-default" onClick={this.nextStep}>Save &amp; Continue</button>
       </div>
     )
   },
 
   nextStep: function() {
+    
+    var data = {
+      name: this.state.name
+    };
+
+    CharacterSheetActions.saveForm(data);
     CharacterSheetActions.nextPage(this.state.step);
   },
 
