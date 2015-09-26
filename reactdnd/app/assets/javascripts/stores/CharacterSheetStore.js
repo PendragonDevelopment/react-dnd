@@ -35,7 +35,14 @@ AppDispatcher.register(function (payload) {
       break;
 
     default:
-      // do nothing
+      break;
 
   }
-}
+
+  CharacterSheetStore.emitChange();
+
+  return true;
+
+});
+
+module.exports = CharacterSheetStore;
