@@ -7,7 +7,7 @@ var BasicFields = React.createClass({
           <input type="text" value={this.props.character.name} className="form-control" />
         </div>
 
-        <button className="btn btn-default">Next Step</button>
+        <button className="btn btn-default" onClick={this.props.nextStep}>Next Step</button>
       </div>
     )
   }

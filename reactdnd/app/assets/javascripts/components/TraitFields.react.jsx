@@ -6,8 +6,8 @@ var TraitFields = React.createClass({
           <label>Traits</label>
           <textarea value={this.props.character.traits} className="form-control" />
         </div>
-        <button className="btn btn-default">Previous Step</button>
-        <button className="btn btn-default">Next Step</button>
+        <button className="btn btn-default" onClick={this.props.previousStep}>Previous Step</button>
+        <button className="btn btn-default" onClick={this.props.nextStep}>Next Step</button>
       </div>
     )
   }
