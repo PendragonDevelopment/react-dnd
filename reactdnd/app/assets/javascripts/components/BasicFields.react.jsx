@@ -7,9 +7,14 @@ var BasicFields = React.createClass({
           <input type="text" value={this.props.character.name} className="form-control" />
         </div>
 
-        <button className="btn btn-default" onClick={this.props.nextStep}>Next Step</button>
+        <button className="btn btn-default" onClick={this.nextStep}>Next Step</button>
       </div>
     )
+  },
+
+  nextStep: function() {
+    var step = 1;
+    CharacterSheetActions.nextPage(step);
   }
 
 });

@@ -7,10 +7,20 @@ var FeatFields = React.createClass({
           <textarea value={this.props.character.bio} className="form-control" />
         </div>
 
-        <button className="btn btn-default" onClick={this.props.previousStep}>Previous Step</button>
-        <button className="btn btn-default" onClick={this.props.nextStep}>Next Step</button>
+        <button className="btn btn-default" onClick={this.previousStep}>Previous Step</button>
+        <button className="btn btn-default" onClick={this.nextStep}>Next Step</button>
       </div>
     )
+  },
+
+  previousStep: function() {
+    var step = 3;
+    CharacterSheetActions.previousPage(step);
+  },
+
+  nextStep: function() {
+    var step = 3;
+    CharacterSheetActions.nextPage(step);
   }
 
 });

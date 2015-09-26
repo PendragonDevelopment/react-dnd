@@ -1,28 +1,27 @@
-/*function GetCharacterState() {
+function getCharacterState() {
   return {
-
+    step: CharacterSheetStore.getStep(),
   }
-}*/
+}
 
 var CharacterSheet = React.createClass({
 
   getInitialState: function() {
-    return {
-      step : 1
-    }
+    return getCharacterState();
   },
 
-  /*componentDidMount: function() {
+  componentDidMount: function() {
     CharacterSheetStore.addChangeListener(this._onChange);
   },
 
   componentWillUnmount: function() {
     CharacterSheetStore.removeChangeListener(this._onChange);
-  },*/
+  },
 
    showStep: function() {
     switch (this.state.step) {
       case 1:
+        // references to props here should be changed to state
         return <BasicFields   character={this.props.character}
                               nextStep={this.nextStep}
                               previousStep={this.previousStep}
@@ -41,18 +40,6 @@ var CharacterSheet = React.createClass({
     }
   },
 
-  nextStep: function() {
-    this.setState({
-      step : this.state.step + 1
-    })
-  },
-
-  previousStep: function() {
-    this.setState({
-      step : this.state.step - 1
-    })
-  },
-
   render: function() {
     return (
       <div className="character-sheet">
@@ -60,9 +47,10 @@ var CharacterSheet = React.createClass({
       </div>
     )
 
+  },
+
+  // Method to setState based upon Store changes
+  _onChange: function() {
+    this.setState(getCharacterState());
   }
-
-  /*_onChange: function() {
-
-  }*/
 })

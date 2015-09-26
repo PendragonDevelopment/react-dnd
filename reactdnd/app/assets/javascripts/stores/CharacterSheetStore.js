@@ -1,4 +1,19 @@
+
+var _step = 1;
+
+function setNextStep(step) {
+  _step += 1;
+};
+
+function setPreviousStep(step) {
+  _step -= 1;
+};
+
 var CharacterSheetStore = _.extend({}, EventEmitter.prototype, {
+
+  getStep: function() {
+    return _step;
+  },
 
   emitChange: function() {
     this.emit('change');
@@ -19,19 +34,16 @@ AppDispatcher.register(function (payload) {
   switch(action.actionType) {
 
     case 'NEXT_PAGE':
-      CharacterSheetStore.emit('change');
+      setNextStep(action.step);
       break;
     case 'PREV_PAGE':
-      CharacterSheetStore.emit('change');
+      setPreviousStep(action.step);
       break;
     case 'SAVE_FORM':
-      CharacterSheetStore.emit('change');
       break;
     case 'SUBMIT_FORM':
-      CharacterSheetStore.emit('change');
       break;
     case 'UPLOAD_IMAGE':
-      CharacterSheetStore.emit('change');
       break;
 
     default:
@@ -44,5 +56,3 @@ AppDispatcher.register(function (payload) {
   return true;
 
 });
-
-module.exports = CharacterSheetStore;
