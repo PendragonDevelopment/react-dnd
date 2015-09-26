@@ -15,5 +15,8 @@
 //= require bootstrap-sprockets
 //= require react
 //= require react_ujs
+//= require flux
+//= require eventemitter
+//= require underscore
 //= require react-stuff
 //= require_tree .
