@@ -1,11 +1,6 @@
 
 var _step = 1;
-var _character = {
-  name: "Jeff",
-  gender: "Male",
-  profession: "Warrior",
-  race: "Orc",
-};
+var _character = {}
 
 function setNextStep(step) {
   _step += 1;
@@ -59,6 +54,9 @@ AppDispatcher.register(function (payload) {
     case 'SUBMIT_FORM':
       break;
     case 'UPLOAD_IMAGE':
+      break;
+    case 'RECEIVE_DATA':
+      setChar(action.data);
       break;
 
     default:

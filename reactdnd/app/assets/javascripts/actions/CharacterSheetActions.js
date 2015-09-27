@@ -33,6 +33,13 @@ var CharacterSheetActions = {
       actionType: CharacterSheetConstants.UPLOAD_IMAGE,
       data: image
     })
-  }
+  },
+
+  receiveData: function(data) {
+    AppDispatcher.handleAction({
+      actionType: CharacterSheetConstants.RECEIVE_DATA,
+      data: data
+    })
+  },
 
 };

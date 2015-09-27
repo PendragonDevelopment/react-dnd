@@ -8,6 +8,7 @@ var TraitFields = React.createClass({
   render: function() {
     return (
       <div className="trait-fields">
+        <h1>Traits</h1>
         <div className="form-group">
           <label>Traits</label>
           <textarea value={this.state.traits} className="form-control" onChange={this.handleChange} />
